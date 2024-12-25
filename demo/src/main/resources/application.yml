@@ -1,0 +1,31 @@
+server:
+  error:
+    include-message: always
+    include-binding-errors: always
+
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${SPRING_MAIL_USERNAME}
+    password: ${SPRING_MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/registration1
+    username: postgres
+    password: root
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+          format-sql: true
+          show-sql: true
